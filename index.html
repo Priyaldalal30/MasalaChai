@@ -10,117 +10,31 @@
       href="https://fonts.googleapis.com/css2?family=Audiowide&family=Cairo+Play:wght@500;600;700;800;900;1000&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://kit.fontawesome.com/5bde5bf2d0.js"
       crossorigin="anonymous"
     ></script>
-    <link href="index.css" rel="stylesheet" type="text/css" />
-    <style>
-      .container {
-        max-width: 900px;
-        background-color: #fff5322a;
-        background-image: linear-gradient(-60deg, #a36b6bd2 0%, #91744be9 100%),
-          url(./images/chai.jpeg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        margin: auto;
-        border-radius: 5px;
-        padding: 10px 30px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-      }
-      header {
-        text-align: center;
-      }
-      h1 {
-        margin: 10px;
-        font-family: "Cairo Play", cursive;
-        font-size: 60px;
-        font-weight: 900;
-        letter-spacing: 3px;
-      }
-      img {
-        width: 100%;
-        box-shadow: 0 0 25px rgb(35, 34, 34);
-        border-radius: 4px;
-      }
-      .description {
-        text-align: left;
-        font-size: 15px;
-      }
-      h3 {
-        margin-bottom: 0px;
-        font-size: 18px;
-      }
-      ul,
-      ol {
-        margin-top: 7px;
-        font-size: 14px;
-      }
-      .bottombar {
-        margin-top: 2px;
-        border-top: 1px solid #7a6000;
-      }
-
-      .logo {
-        font-family: "Audiowide", cursive;
-        font-size: 25px;
-        display: flex;
-        justify-content: left;
-        margin-top: 10px;
-        color: black;
-      }
-      .links {
-        display: flex;
-        justify-content: end;
-        color: black;
-      }
-      .coded {
-        margin-top: -30px;
-        text-align: end;
-        margin-bottom: 12px;
-        line-height: 20px;
-        color: black;
-      }
-
-      .netlifyLink,
-      .priyal {
-        text-decoration: underline;
-        color: black;
-      }
-      .netlifyLink:hover,
-      .priyal:hover {
-        text-decoration: underline;
-        cursor: pointer;
-        color: #5cc2b2;
-      }
-
-      .linkedin,
-      .github {
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-      .github {
-        padding-right: 0px;
-      }
-      .linkedlink,
-      .githublink {
-        color: black;
-        text-decoration: none;
-      }
-      .linkedlink:hover {
-        color: #1066c2;
-      }
-
-      .githublink:hover {
-        color: #682e8e;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
       <header>
         <h1>Masala Chai☕️</h1>
-        <img src="./images/chai.jpeg" />
+        <a href="index.html#ingredients">
+          <button class="about">Jump to recipe</button>
+        </a>
+        <img src="./images/chai.jpeg" alt="Masala Chai masala tea indian tea" />
         <p class="description">
           There's nothing quite as comforting as the perfect cup of Indian
           Masala Chai whether it's in the middle of summer or for cozying up in
@@ -129,9 +43,18 @@
           with Parle-G biscuits or cake rusk for dipping.
         </p>
       </header>
-
       <section>
-        <h3>Ingredients</h3>
+        <div class="row">
+          <div class="col-4 fw-bold">Servings: 2 cups</div>
+          <div class="col-4 fw-bold">Prep Time: 10 minutes</div>
+          <div class="col-4 fw-bold">Cook Time: 10 minutes</div>
+        </div>
+      </section>
+      <section
+        onmouseover="ingredientsHover()"
+        onmouseout="ingredientsNormal()"
+      >
+        <h3 id="ingredients">📝 Ingredients</h3>
         <ul>
           <li>2 cups water</li>
           <li>2 teaspoon loose leaf black tea, or tea bags</li>
@@ -145,8 +68,11 @@
         </ul>
       </section>
 
-      <section>
-        <h3>Preparation</h3>
+      <section
+        onmouseover="preparationHover()"
+        onmouseout="preparationNormal()"
+      >
+        <h3 id="preparation">🫖 Preparation</h3>
         <ol>
           <li>
             Add the whole spices to a mortar and crush them lightly into smaller
@@ -232,6 +158,19 @@
         </span>
       </footer>
     </div>
-    <script src="script.js"></script>
+    <script>
+      function ingredientsHover() {
+        document.getElementById("ingredients").style.fontSize = "200%";
+      }
+      function ingredientsNormal() {
+        document.getElementById("ingredients").style.fontSize = "100%";
+      }
+      function preparationHover() {
+        document.getElementById("preparation").style.fontSize = "200%";
+      }
+      function preparationNormal() {
+        document.getElementById("preparation").style.fontSize = "100%";
+      }
+    </script>
   </body>
 </html>
